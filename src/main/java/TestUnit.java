@@ -20,7 +20,17 @@ public class TestUnit {
     public void testTwo(){
         //test for empty String
         int res = stringCalculator.add("");
-        assertEquals("Empty String test = ",0,res);
+        assertEquals("Empty String test",0,res);
+    }
+
+    @Test
+    public void testThree(){
+        // test for one number
+        assertEquals(
+                "One number test",
+                1,
+                stringCalculator.add("1")
+        );
     }
 
     @After
