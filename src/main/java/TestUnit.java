@@ -39,6 +39,16 @@ public class TestUnit {
         );
     }
 
+    @Test
+    public void testFour(){
+        // test for two numbers
+        assertEquals(
+                "Two numbers test",
+                8,
+                stringCalculator.add("3,5")
+        );
+    }
+
     @After
     public void destroy(){
         stringCalculator = null;
