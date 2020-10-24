@@ -61,7 +61,7 @@ public class StringCalculator {
             }
 
         }else{
-            return numbers.split(",", 0);
+            return numbers.split("[,\n]", 0);
         }
     }
 

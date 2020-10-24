@@ -113,7 +113,7 @@ public class TestUnit {
     public void testEleven(){
         // test for multi-character length delimiter
         assertEquals(
-                "multi-character length delimiter test",
+                "Multi-character length delimiter test",
                 14,
                 stringCalculator.add("//;;;\n5;;;2;;;3;;;4;;;1002")
         );
