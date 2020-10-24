@@ -101,9 +101,9 @@ public class TestUnit {
 
     @Test
     public void testTen(){
-        // test for negative numbers
+        // test for numbers greater than 100
         assertEquals(
-                "Ignore number more than 1000 test",
+                "Ignore number greater than 1000 test",
                 14,
                 stringCalculator.add("//;\n5;2;3;4;1002")
         );
@@ -111,7 +111,7 @@ public class TestUnit {
 
     @Test
     public void testEleven(){
-        // test for negative numbers
+        // test for multi-character length delimiter
         assertEquals(
                 "multi-character length delimiter test",
                 14,
