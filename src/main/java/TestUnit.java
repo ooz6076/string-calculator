@@ -12,15 +12,21 @@ public class TestUnit {
     @Test
     public void testOne(){
         // test for null String
-        int res = stringCalculator.add("0");
-        assertEquals("Null String test",0,res);
+        assertEquals(
+                "Null String test",
+                0,
+                stringCalculator.add("0")
+        );
     }
 
     @Test
     public void testTwo(){
         //test for empty String
-        int res = stringCalculator.add("");
-        assertEquals("Empty String test",0,res);
+        assertEquals(
+                "Empty String test",
+                0,
+                stringCalculator.add("")
+        );
     }
 
     @Test
