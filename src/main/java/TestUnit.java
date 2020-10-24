@@ -84,8 +84,8 @@ public class TestUnit {
         // test for different delimiter 2
         assertEquals(
                 "Different delimiter test 2",
-                10,
-                stringCalculator.add("//;\n1;2;3;4")
+                14,
+                stringCalculator.add("//;\n5;2;3;4")
         );
     }
 

@@ -1,3 +1,5 @@
+import javafx.util.Pair;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -14,21 +16,9 @@ public class StringCalculator {
         if(numbers == null || numbers.isEmpty()){
             return 0;
         }
-        String delimiter = null;
-        String[] nums = null;
-        if(numbers.startsWith("//")){
-            String regex = "//(.)\n(.*)";
-            Matcher matcher = Pattern.compile(regex).matcher(numbers);
-            if(matcher.matches()){
-                delimiter = matcher.group(1);
-                nums = matcher.group(2).split(delimiter,0);
-            }else{
-                return 0;
-            }
 
-        }else{
-            nums = numbers.split(",", 0);
-        }
+        String[] nums = customSplitter(numbers);
+
 
         int sum = 0;
 
@@ -38,6 +28,27 @@ public class StringCalculator {
         }
 
         return sum;
+    }
+
+    private String[] customSplitter(String numbers){
+
+        if(numbers.startsWith("//")){
+            String regex = "//(.)\n(.*)";
+            Matcher matcher = Pattern.compile(regex).matcher(numbers);
+            if(matcher.matches()){
+                return matcher
+                        .group(2)
+                        .split(
+                                matcher.group(1),
+                                0
+                        );
+            }else{
+                return null;
+            }
+
+        }else{
+            return numbers.split(",", 0);
+        }
     }
 
 }
