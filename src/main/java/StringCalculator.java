@@ -1,4 +1,4 @@
-import javafx.util.Pair;
+import customExceptions.NegativeNumberException;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -10,7 +10,7 @@ public class StringCalculator {
 
     }
 
-    public int add(String numbers){
+    public int add(String numbers) {
 
 
         if(numbers == null || numbers.isEmpty()){
@@ -21,13 +21,25 @@ public class StringCalculator {
 
 
         int sum = 0;
+        boolean exceptionFound = false;
 
         for(String number: nums){
-            int num = Integer.parseInt(number);
-            sum += num;
+            try{
+                int num = Integer.parseInt(number);
+
+                if(num < 0){
+                    exceptionFound = true;
+                    throw new NegativeNumberException(num);
+                }
+
+                sum += num;
+            }catch (NegativeNumberException ex){
+                System.out.println(ex.toString());
+            }
         }
 
-        return sum;
+
+        return exceptionFound?0:sum;
     }
 
     private String[] customSplitter(String numbers){

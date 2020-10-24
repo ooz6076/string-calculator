@@ -89,6 +89,16 @@ public class TestUnit {
         );
     }
 
+    @Test
+    public void testNine(){
+        // test for negative numbers
+        assertEquals(
+                "Negative Number test",
+                9,
+                stringCalculator.add("//;\n5;-2;-3;4")
+        );
+    }
+
     @After
     public void destroy(){
         stringCalculator = null;
