@@ -47,7 +47,7 @@ public class StringCalculator {
     private String[] customSplitter(String numbers){
 
         if(numbers.startsWith("//")){
-            String regex = "//(.)\n(.*)";
+            String regex = "//(.*)\n(.*)";
             Matcher matcher = Pattern.compile(regex).matcher(numbers);
             if(matcher.matches()){
                 return matcher
