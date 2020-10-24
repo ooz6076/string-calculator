@@ -99,6 +99,16 @@ public class TestUnit {
         );
     }
 
+    @Test
+    public void testTen(){
+        // test for negative numbers
+        assertEquals(
+                "Negative Number test",
+                14,
+                stringCalculator.add("//;\n5;2;3;4;1002")
+        );
+    }
+
     @After
     public void destroy(){
         stringCalculator = null;

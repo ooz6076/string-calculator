@@ -32,7 +32,9 @@ public class StringCalculator {
                     throw new NegativeNumberException(num);
                 }
 
-                sum += num;
+                if(num <= 1000)
+                    sum += num;
+
             }catch (NegativeNumberException ex){
                 System.out.println(ex.toString());
             }
