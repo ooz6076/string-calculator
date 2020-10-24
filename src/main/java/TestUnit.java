@@ -49,6 +49,26 @@ public class TestUnit {
         );
     }
 
+    @Test
+    public void testFive(){
+        // multiple numbers test
+        assertEquals(
+                "Multiple numbers test",
+                55,
+                stringCalculator.add("1,2,3,4,5,6,7,8,9,10")
+        );
+    }
+
+    @Test
+    public void testSix(){
+        // test for allowing new line characters
+        assertEquals(
+                "New line character test",
+                10,
+                stringCalculator.add("1\n4,5")
+        );
+    }
+
     @After
     public void destroy(){
         stringCalculator = null;
