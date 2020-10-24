@@ -69,6 +69,26 @@ public class TestUnit {
         );
     }
 
+    @Test
+    public void testSeven(){
+        //test for different delimiter
+        assertEquals(
+                "Different delimiter test",
+                10,
+                stringCalculator.add("//:\n1:2:3:4")
+        );
+    }
+
+    @Test
+    public void testEight(){
+        // test for different delimiter 2
+        assertEquals(
+                "Different delimiter test 2",
+                10,
+                stringCalculator.add("//;\n1;2;3;4")
+        );
+    }
+
     @After
     public void destroy(){
         stringCalculator = null;
